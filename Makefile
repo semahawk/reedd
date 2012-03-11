@@ -26,9 +26,9 @@
 #
 
 CXX = gcc
-CXXFLAGS += 
+CXXFLAGS += -Wall -Werror
 
-OBJECTS = cara.o
+OBJECTS = cara.o commands.o
 
 all: cara
 
@@ -37,6 +37,9 @@ cara: $(OBJECTS)
 
 cara.o: cara.c cara.h
 	$(CXX) $(CXXFLAGS) -c cara.c 
+
+commands.o: commands.c commands.h
+	$(CXX) $(CXXFLAGS) -c commands.c
 
 clean:
 	rm -f *~ *.o
