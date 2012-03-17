@@ -26,7 +26,7 @@
 #
 
 CXX = gcc
-CXXFLAGS += -Wall -Werror
+CXXFLAGS += -Wall -Werror -std=c99
 
 OBJECTS = cara.o commands.o
 
