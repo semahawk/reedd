@@ -7,7 +7,10 @@
 #ifndef CARA_H
 #define CARA_H
 
-#define VERSION "0.1.0"
+#define VERSION_MAJOR "0"
+#define VERSION_MINOR "1"
+#define VERSION_PATCH "0"
+#define VERSION VERSION_MAJOR "." VERSION_MINOR "." VERSION_PATCH
 
 #define CMD_NONE     0
 #define CMD_INSTALLS 1
@@ -16,8 +19,7 @@
 
 struct cmd_struct {
   const char* cmd;
-  /*              argc argv    progname */
-  int (*function)(int, char**, const char*);
+  int (*function)(int argc, char** argv, const char* progname);
 };
 
 struct pkg_struct {
