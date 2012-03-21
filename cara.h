@@ -27,7 +27,8 @@ struct pkg_struct {
   char* version;
 };
 
-void usage(int op, const char* progname);
+void usage(const char* progname);
+void help(const char* progname);
 void version(void);
 
 #endif /* CARA_H */

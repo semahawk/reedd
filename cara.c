@@ -31,25 +31,35 @@
 #include <stdio.h>
 #include <string.h>
 
-void usage(int op, const char* progname){
-  switch (op){
-    case CMD_NONE:
-      printf ("usage: %s [--help | --version] <command> [args]\n", progname);
-      putchar('\n');
-      printf ("commands:\n");
-      printf ("  installs         install a package");
-      printf("\n\n");
-      break;
-  }
+void help(const char* progname){
+  printf("Usage: %s [--version] [--help] [--usage]\n", progname);
+  printf("            <command> [args]\n");
+  printf("\n");
+  printf("  A package manager for Caroline Linux.\n");
+  printf("\n");
+  printf("  Commands:\n");
+  printf("  installs                   Install a package");
+  printf("\n\n");
+  printf("  Options:\n");
+  printf("  -h, --help                 Print this help\n");
+  printf("  -u, --usage                Output usage info\n");
+  printf("  -v, --version              Show version\n");
+  printf("\n\n");
+  printf("This program is licensed under the MIT license.\n");
+  printf("If you have any questions/found a bug, write to <urbas@hush.ai>\n");
+}
+
+void usage(const char* progname){
+  printf("Usage: %s [option] [--help] <command> [args]\n", progname);
 }
 
 void version(void){
-  putchar('\n');
-  printf ("   Cara v%s\n", VERSION);
-  printf ("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
-  putchar('\n');
-  printf ("   This program is licensed under the MIT license.\n");
-  putchar('\n');
+  printf("\n");
+  printf("   Cara v%s\n", VERSION);
+  printf("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
+  printf("\n");
+  printf("   This program is licensed under the MIT license.\n");
+  printf("\n");
 }
 
 int main(int argc, char* argv[]){
@@ -58,7 +68,7 @@ int main(int argc, char* argv[]){
 
   /* show help if not specified any args */
   if (argc < 2){
-    usage(CMD_NONE, progname);
+    usage(progname);
     return 1;
   }
 
@@ -72,7 +82,10 @@ int main(int argc, char* argv[]){
     version();
     return 0;
   } else if (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")){
-    usage(CMD_NONE, progname);
+    help(progname);
+    return 0;
+  } else if (!strcmp(argv[1], "-u") || !strcmp(argv[1], "--usage")){
+    usage(progname);
     return 0;
   }
 

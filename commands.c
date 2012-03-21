@@ -12,7 +12,7 @@
 
 const char* argp_program_bug_adress = "<urbas@hush.ai>";
 static char doc[] = "\n  Installing packages utility.";
-static char args_doc[] = "PACKAGE";
+static char args_doc[] = "<package>";
 
 static struct argp_option options[] = {
   { 0, 0, 0, 0, " General options:" },
