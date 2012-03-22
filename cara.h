@@ -7,13 +7,10 @@
 #ifndef CARA_H
 #define CARA_H
 
-#define VERSION_MAJOR "0"
-#define VERSION_MINOR "1"
-#define VERSION_PATCH "0"
-#define VERSION VERSION_MAJOR "." VERSION_MINOR "." VERSION_PATCH
-
-#define CMD_NONE     0
-#define CMD_INSTALLS 1
+//#define VERSION_MAJOR "0"
+//#define VERSION_MINOR "1"
+//#define VERSION_PATCH "0"
+//#define VERSION VERSION_MAJOR "." VERSION_MINOR "." VERSION_PATCH
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof *(x))
 

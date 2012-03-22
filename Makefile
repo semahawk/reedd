@@ -25,12 +25,18 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+# Please, do not mess with that
+VERSION = 0.1.0
+
+BINDIR = /usr/local/bin
+MANDIR = /usr/local/man
+
 CXX = gcc
-CXXFLAGS += -Wall -Werror -std=c99
+CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\"
 
 OBJECTS = cara.o commands.o
 
-all: cara
+all: cara man
 
 cara: $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $@
@@ -41,10 +47,23 @@ cara.o: cara.c cara.h
 commands.o: commands.c commands.h
 	$(CXX) $(CXXFLAGS) -c commands.c
 
+man: cara.8
+
+%: %.in
+	sed -e "s/##version##/$(VERSION)/" $< > $@
+
+install: all
+	install -D -m 0755 cara $(BINDIR)/cara
+	install -D -m 0644 cara.8 $(MANDIR)/man8/cara.8
+
 clean:
-	rm -f *~ *.o
+	rm -f *~ *.o *.8
 
 distclean: clean
 	rm -f cara
+
+uninstall: distclean
+	rm -f $(BINDIR)/cara
+	rm -f $(MANDIR)/man8/cara.8
 
 # End of file
