@@ -32,9 +32,9 @@ BINDIR = /usr/local/bin
 MANDIR = /usr/local/man
 
 CXX = gcc
-CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\"
+CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\" -I.
 
-OBJECTS = cara.o commands.o
+OBJECTS = cara.o installs.o
 
 all: cara man
 
@@ -44,8 +44,8 @@ cara: $(OBJECTS)
 cara.o: cara.c cara.h
 	$(CXX) $(CXXFLAGS) -c cara.c 
 
-commands.o: commands.c commands.h
-	$(CXX) $(CXXFLAGS) -c commands.c
+installs.o: cmd/installs.c cmd.h
+	$(CXX) $(CXXFLAGS) -c cmd/installs.c
 
 man: cara.8
 

@@ -26,7 +26,7 @@
  */
 
 #include "cara.h"
-#include "commands.h"
+#include "cmd.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -90,7 +90,7 @@ int main(int argc, char* argv[]){
   }
 
   static struct cmd_struct commands[] = {
-    { "installs", command_installs },
+    { "installs", cmd_installs },
   };
 
   /* command to be run */

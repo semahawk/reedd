@@ -1,11 +1,11 @@
 /*
- * commands.c
+ * cmd/installs.c
  *
- * Copyright: 2012 by Szymon Urbaś <urbas@hush.ai>
+ * Copyright: (c) 2012 by Szymon Urbaś <urbas@hush.ai>
  */
 
 #include "cara.h"
-#include "commands.h"
+#include "cmd.h"
 
 #include <stdio.h>
 #include <argp.h>
@@ -51,7 +51,7 @@ static error_t parse_opt(int key, char* arg, struct argp_state* state){
 
 static struct argp argp = { options, parse_opt, args_doc, doc };
 
-int command_installs(int argc, char* argv[], const char* progname){
+int cmd_installs(int argc, char* argv[], const char* progname){
   struct arguments arguments;
   
   /*
