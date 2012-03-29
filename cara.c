@@ -87,6 +87,17 @@ int main(int argc, char* argv[]){
   } else if (!strcmp(argv[1], "-u") || !strcmp(argv[1], "--usage")){
     usage(progname);
     return 0;
+    /*
+     * yarharhar!
+     *
+     * we 're checking if the first character of argv[0] and
+     * --deadbeef is the same - if it is, that means the
+     * previous else-ifs didn't catch that option, so there is
+     * obviously no such option.
+     */
+  } else if (!strncmp(argv[1], "--deadbeef", 1)){
+    printf("%s: unknown option ‘%s’\n", progname, argv[1]);
+    return 1;
   }
 
   static struct cmd_struct commands[] = {
