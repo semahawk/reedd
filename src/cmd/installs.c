@@ -53,7 +53,7 @@ static struct argp argp = { options, parse_opt, args_doc, doc };
 
 int cmd_installs(int argc, char* argv[], const char* progname){
   struct arguments arguments;
-  
+
   /*
    * a little trick
    *
