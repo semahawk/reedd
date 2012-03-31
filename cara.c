@@ -43,7 +43,7 @@ void help(const char* progname){
   printf("  Options:\n");
   printf("  -h, --help                 Print this help\n");
   printf("  -u, --usage                Output usage info\n");
-  printf("  -v, --version              Show version\n");
+  printf("  -V, --version              Show version\n");
   printf("\n\n");
   printf("This program is licensed under the MIT license.\n");
   printf("If you have any questions/found a bug, write to <urbas@hush.ai>\n");
@@ -78,7 +78,7 @@ int main(int argc, char* argv[]){
    *
    * Unless it won't work..
    */
-  if (!strcmp(argv[1], "-v") || !strcmp(argv[1], "--version")){
+  if (!strcmp(argv[1], "-V") || !strcmp(argv[1], "--version")){
     version();
     return 0;
   } else if (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")){
@@ -87,6 +87,17 @@ int main(int argc, char* argv[]){
   } else if (!strcmp(argv[1], "-u") || !strcmp(argv[1], "--usage")){
     usage(progname);
     return 0;
+    /*
+     * yarharhar!
+     *
+     * we 're checking if the first character of argv[0] and
+     * --deadbeef is the same - if it is, that means the
+     * previous else-ifs didn't catch that option, so there is
+     * obviously no such option.
+     */
+  } else if (!strncmp(argv[1], "--deadbeef", 1)){
+    printf("%s: unknown option ‘%s’\n", progname, argv[1]);
+    return 1;
   }
 
   static struct cmd_struct commands[] = {

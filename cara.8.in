@@ -6,11 +6,11 @@ cara \- package manager for Caroline Linux
 cara [\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR] <\fIcommand\fR> [args]
 
 .SH BASIC OPTIONS
-.SS \-\-help
+.SS \-h, \-\-help
 Show help with info about available commands, bug address and usage.
-.SS \-\-version
+.SS \-V, \-\-version
 Prints version and copyright note.
-.SS \-\-usage
+.SS \-u, \-\-usage
 Output usage info.
 
 .SH COMMANDS
