@@ -2,7 +2,7 @@
  * cara.c
  *
  * Copyright: 2012 Szymon Urbaś <urbas@hush.ai>
- * 
+ *
  * License: (the MIT license)
  *
  * Permission is hereby granted, free of charge, to any person obtaining

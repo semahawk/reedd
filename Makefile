@@ -32,38 +32,39 @@ BINDIR = /usr/local/bin
 MANDIR = /usr/local/man
 
 CXX = gcc
-CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\" -I.
+CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\" -I./src
 
 OBJECTS = cara.o installs.o
 
 all: cara man
 
 cara: $(OBJECTS)
-	$(CXX) $(OBJECTS) -o $@
+	$(CXX) $(OBJECTS) -o bin/$@
 
-cara.o: cara.c cara.h
-	$(CXX) $(CXXFLAGS) -c cara.c 
+cara.o: src/cara.c src/cara.h
+	$(CXX) $(CXXFLAGS) -c src/cara.c
 
-installs.o: cmd/installs.c cmd.h
-	$(CXX) $(CXXFLAGS) -c cmd/installs.c
+installs.o: src/cmd/installs.c src/cmd.h
+	$(CXX) $(CXXFLAGS) -c src/cmd/installs.c
 
 man: cara.8
 
-%: %.in
-	sed -e "s/##version##/$(VERSION)/" $< > $@
+%: man/%.in
+	sed -e "s/##version##/$(VERSION)/" $< > man/$@
 
 install: all
-	install -D -m 0755 cara $(BINDIR)/cara
-	install -D -m 0644 cara.8 $(MANDIR)/man8/cara.8
+	install -D -m 0755 bin/cara $(BINDIR)/cara
+	install -D -m 0644 man/cara.8 $(MANDIR)/man8/cara.8
+
+uninstall:
+	rm -f $(BINDIR)/cara
+	rm -f $(MANDIR)/man8/cara.8
 
 clean:
 	rm -f *~ *.o *.8
+	rm -f src/*~ src/*.o man/*.8
 
 distclean: clean
-	rm -f cara
-
-uninstall: distclean
-	rm -f $(BINDIR)/cara
-	rm -f $(MANDIR)/man8/cara.8
+	rm -f bin/cara
 
 # End of file

@@ -14,7 +14,7 @@ Prints version and copyright note.
 Output usage info.
 
 .SH COMMANDS
-Below are listed all commands available to use. Their short list could be achieved by running 
+Below are listed all commands available to use. Their short list could be achieved by running
 .BR cara\ \-\-help .
 .SS installs
 Installs a package. Additional options are listed below.
