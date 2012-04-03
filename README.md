@@ -8,17 +8,23 @@ __NOTE:__ Cara (and Caroline Linux) are in highly starting stage, it shouldn't b
 
 ## Installing
 
-Right now Cara can't be installed (well, could be but manually) but only compiled. To compile:
+To install Cara do the standard:
 
     make
 
-To clean \*~ and \*.o files run:
+followed by:
 
-    make clean
+    sudo make install
 
-To also remove the executable:
+__NOTE:__ The default install directory is `/usr/local/bin/` (yup, it's a single binary file right now :D). It could be overwritten by running:
 
-    make distclean
+    make BINDIR=<path> install
+
+## Uninstalling
+
+Installing is even easier:
+
+    sudo make uninstall
 
 ## Contributors
 
