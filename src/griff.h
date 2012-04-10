@@ -1,16 +1,11 @@
 /*
- * cara.h
+ * griff.h
  *
  * Copyright: 2012 by Szymon Urbaś <urbas@hush.ai>
  */
 
-#ifndef CARA_H
-#define CARA_H
-
-//#define VERSION_MAJOR "0"
-//#define VERSION_MINOR "1"
-//#define VERSION_PATCH "0"
-//#define VERSION VERSION_MAJOR "." VERSION_MINOR "." VERSION_PATCH
+#ifndef GRIFF_H
+#define GRIFF_H
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof *(x))
 
@@ -28,5 +23,5 @@ void usage(const char* progname);
 void help(const char* progname);
 void version(void);
 
-#endif /* CARA_H */
+#endif /* GRIFF_H */
 

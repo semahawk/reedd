@@ -1,14 +1,14 @@
-# Cara
+# Griff
 
 ## Synopsis
 
-Cara is a simple package manager for Caroline Linux.
+Griff is a simple package manager for Grave Differ (Linux).
 
-__NOTE:__ Cara (and Caroline Linux) are in highly starting stage, it shouldn't be considered stable and usable. Till sometime.
+__NOTE:__ Griff (and Grave Differ) are in highly starting stage, it shouldn't be considered stable and usable. Till sometime.
 
 ## Installing
 
-To install Cara do the standard:
+To install Griff do the standard:
 
     make
 

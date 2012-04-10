@@ -1,5 +1,5 @@
 /*
- * cara.c
+ * griff.c
  *
  * Copyright: 2012 Szymon Urbaś <urbas@hush.ai>
  *
@@ -25,7 +25,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "cara.h"
+#include "griff.h"
 #include "cmd.h"
 
 #include <stdio.h>
@@ -33,9 +33,9 @@
 
 void help(const char* progname){
   printf("Usage: %s [--version] [--help] [--usage]\n", progname);
-  printf("            <command> [args]\n");
+  printf("             <command> [args]\n");
   printf("\n");
-  printf("  A package manager for Caroline Linux.\n");
+  printf("  A package manager for Grave Differ.\n");
   printf("\n");
   printf("  Commands:\n");
   printf("  installs                   Install a package");
@@ -55,7 +55,7 @@ void usage(const char* progname){
 
 void version(void){
   printf("\n");
-  printf("   Cara v%s\n", VERSION);
+  printf("   Griff v%s\n", VERSION);
   printf("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
   printf("\n");
   printf("   This program is licensed under the MIT license.\n");
@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
   }
 
   /*
-   * These options ought to be passed after the programs name ('cara')
+   * These options ought to be passed after the programs name ('griff')
    * and before the command, as argv[1].
    *
    * Unless it won't work..

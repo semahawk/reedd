@@ -4,7 +4,7 @@
  * Copyright: (c) 2012 by Szymon Urbaś <urbas@hush.ai>
  */
 
-#include "cara.h"
+#include "griff.h"
 #include "cmd.h"
 
 #include <stdio.h>
@@ -57,10 +57,10 @@ int cmd_installs(int argc, char* argv[], const char* progname){
   /*
    * a little trick
    *
-   * we want help to show 'cara installs [OPTION...] ..'
-   * instead of just 'cara [OPTION...] ..'
+   * we want help to show 'griff installs [OPTION...] ..'
+   * instead of just 'griff [OPTION...] ..'
    */
-  argv[0] = "cara installs";
+  argv[0] = "griff installs";
 
   arguments.pkg.name = "null";
   arguments.pkg.version = "newest";

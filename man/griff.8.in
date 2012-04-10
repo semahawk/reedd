@@ -1,9 +1,9 @@
-.TH cara 8 "Mar 21, 2012" "cara ##version##" "Cara package manager"
+.TH griff 8 "Mar 21, 2012" "griff ##version##" "Griff package manager"
 .SH NAME
-cara \- package manager for Caroline Linux
+griff \- package manager for Grave Differ
 
 .SH SYNOPSIS
-cara [\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR] <\fIcommand\fR> [args]
+griff [\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR] <\fIcommand\fR> [args]
 
 .SH BASIC OPTIONS
 .SS \-h, \-\-help
@@ -15,7 +15,7 @@ Output usage info.
 
 .SH COMMANDS
 Below are listed all commands available to use. Their short list could be achieved by running
-.BR cara\ \-\-help .
+.BR griff\ \-\-help .
 .SS installs
 Installs a package. Additional options are listed below.
 .
@@ -23,7 +23,7 @@ Installs a package. Additional options are listed below.
 .B \-v, \-\-pkg\-version=\fIarg\fR
 Set the packages version to
 .IR arg .
-If this option is not specified, cara will install the newest possible one.
+If this option is not specified, griff will install the newest possible one.
 
 .SH EXIT STATUS
 
