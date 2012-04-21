@@ -117,15 +117,15 @@ int main(int argc, char* argv[]){
       continue;
     }
 
-    /* run the command */
-    return p->function(argc, argv, progname);
+    /* run the command which also ends the script with an
+     * appropriate return code
+     */
+    return p->function(argc,argv, progname);
   }
 
   if (!cmd_found){
     printf("%s: unknown command ‘%s’\n", progname, cmd);
     return 1;
   }
-
-  return 0;
 }
 
