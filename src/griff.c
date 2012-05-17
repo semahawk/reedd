@@ -25,11 +25,11 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "griff.h"
-#include "cmd.h"
-
 #include <stdio.h>
 #include <string.h>
+
+#include "griff.h"
+#include "cmd.h"
 
 void help(const char* progname){
   printf("Usage: %s [--version] [--help] [--usage]\n", progname);

@@ -25,16 +25,15 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-# Please, do not mess with that
-VERSION = 0.1.0
-
 BINDIR = /usr/local/bin
 MANDIR = /usr/local/man
 
 CXX = gcc
-CXXFLAGS += -Wall -Werror -std=c99 -DVERSION=\"$(VERSION)\" -I./src
+CXXFLAGS += -Wall -Werror -std=c99 -I./src
 
 OBJECTS = griff.o installs.o
+
+VERSION := ${shell cat VERSION}
 
 all: griff man
 
@@ -42,7 +41,7 @@ griff: $(OBJECTS)
 	$(CXX) $(OBJECTS) -o bin/$@
 
 griff.o: src/griff.c src/griff.h
-	$(CXX) $(CXXFLAGS) -c src/griff.c
+	$(CXX) $(CXXFLAGS) -D'VERSION="$(VERSION)"' -c src/griff.c
 
 installs.o: src/cmd/installs.c src/cmd.h
 	$(CXX) $(CXXFLAGS) -c src/cmd/installs.c
