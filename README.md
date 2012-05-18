@@ -1,14 +1,14 @@
-# Griff
+# Reedd
 
 ## Synopsis
 
-Griff is a simple package manager for Grave Differ (Linux).
+Reedd is a simple package manager for Red Head.
 
-__NOTE:__ Griff (and Grave Differ) are in highly starting stage, it shouldn't be considered stable and usable. Till sometime.
+__NOTE:__ Reedd (and Red Head) are in highly starting stage, it shouldn't be considered stable and usable. Till sometime.
 
 ## Installing
 
-To install Griff do the standard:
+To install Reedd do the standard:
 
     make
 

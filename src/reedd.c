@@ -1,5 +1,5 @@
 /*
- * griff.c
+ * reedd.c
  *
  * Copyright: 2012 Szymon Urbaś <urbas@hush.ai>
  *
@@ -28,14 +28,14 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "griff.h"
+#include "reedd.h"
 #include "cmd.h"
 
 void help(const char* progname){
   printf("Usage: %s [--version] [--help] [--usage]\n", progname);
   printf("             <command> [args]\n");
   printf("\n");
-  printf("  A package manager for Grave Differ.\n");
+  printf("  A package manager for Red Head.\n");
   printf("\n");
   printf("  Commands:\n");
   printf("  installs                   Install a package");
@@ -55,7 +55,7 @@ void usage(const char* progname){
 
 void version(void){
   printf("\n");
-  printf("   Griff v%s\n", VERSION);
+  printf("   Reedd v%s\n", VERSION);
   printf("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
   printf("\n");
   printf("   This program is licensed under the MIT license.\n");
@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
   }
 
   /*
-   * These options ought to be passed after the programs name ('griff')
+   * These options ought to be passed after the programs name ('reedd')
    * and before the command, as argv[1].
    *
    * Unless it won't work..

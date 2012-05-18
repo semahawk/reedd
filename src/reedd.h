@@ -1,11 +1,11 @@
 /*
- * griff.h
+ * reedd.h
  *
  * Copyright: 2012 by Szymon Urbaś <urbas@hush.ai>
  */
 
-#ifndef GRIFF_H
-#define GRIFF_H
+#ifndef REEDD_H
+#define REEDD_H
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof *(x))
 
@@ -23,5 +23,5 @@ void usage(const char* progname);
 void help(const char* progname);
 void version(void);
 
-#endif /* GRIFF_H */
+#endif /* REEDD_H */
 
