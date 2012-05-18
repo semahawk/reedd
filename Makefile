@@ -25,9 +25,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-BINDIR = /usr/local/bin
-MANDIR = /usr/local/man
-
 CXX = gcc
 CXXFLAGS += -Wall -Werror -std=c99 -I./src
 
@@ -52,12 +49,12 @@ man: reedd.8
 	sed -e "s/##version##/$(VERSION)/" $< > man/$@
 
 install: all
-	install -D -m 0755 bin/reedd $(BINDIR)/reedd
-	install -D -m 0644 man/reedd.8 $(MANDIR)/man8/reedd.8
+	install -D -m 0755 bin/reedd /usr/bin/reedd
+	install -D -m 0644 man/reedd.8 /usr/man/man8/reedd.8
 
 uninstall:
-	rm -f $(BINDIR)/reedd
-	rm -f $(MANDIR)/man8/reedd.8
+	rm -f /usr/bin/reedd
+	rm -f /usr/man/man8/reedd.8
 
 clean:
 	rm -f *~ *.o *.8

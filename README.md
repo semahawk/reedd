@@ -16,9 +16,7 @@ followed by:
 
     sudo make install
 
-__NOTE:__ The default install directory is `/usr/local/bin/` (yup, it's a single binary file right now :D). It could be overwritten by running:
-
-    make BINDIR=<path> install
+__NOTE:__ Reedd would be installed in `/usr`.
 
 ## Uninstalling
 
