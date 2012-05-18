@@ -4,7 +4,7 @@
  * Copyright: (c) 2012 by Szymon Urbaś <urbas@hush.ai>
  */
 
-#include "griff.h"
+#include "reedd.h"
 #include "cmd.h"
 
 #include <stdio.h>
@@ -57,10 +57,10 @@ int cmd_installs(int argc, char* argv[], const char* progname){
   /*
    * a little trick
    *
-   * we want help to show 'griff installs [OPTION...] ..'
-   * instead of just 'griff [OPTION...] ..'
+   * we want help to show 'reedd installs [OPTION...] ..'
+   * instead of just 'reedd [OPTION...] ..'
    */
-  argv[0] = "griff installs";
+  argv[0] = "reedd installs";
 
   arguments.pkg.name = "null";
   arguments.pkg.version = "newest";

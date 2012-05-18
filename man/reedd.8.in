@@ -1,9 +1,9 @@
-.TH griff 8 "Mar 21, 2012" "griff ##version##" "Griff package manager"
+.TH reedd 8 "Mar 21, 2012" "reedd ##version##" "Reedd package manager"
 .SH NAME
-griff \- package manager for Grave Differ
+reedd \- package manager for Red Head.
 
 .SH SYNOPSIS
-griff [\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR] <\fIcommand\fR> [args]
+reedd [\fB\-\-help\fR|\fB\-\-usage\fR|\fB\-\-version\fR] <\fIcommand\fR> [args]
 
 .SH BASIC OPTIONS
 .SS \-h, \-\-help
@@ -15,7 +15,7 @@ Output usage info.
 
 .SH COMMANDS
 Below are listed all commands available to use. Their short list could be achieved by running
-.BR griff\ \-\-help .
+.BR reedd\ \-\-help .
 .SS installs
 Installs a package. Additional options are listed below.
 .
@@ -23,7 +23,7 @@ Installs a package. Additional options are listed below.
 .B \-v, \-\-pkg\-version=\fIarg\fR
 Set the packages version to
 .IR arg .
-If this option is not specified, griff will install the newest possible one.
+If this option is not specified, reedd will install the newest possible one.
 
 .SH EXIT STATUS
 
