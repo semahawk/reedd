@@ -1,5 +1,5 @@
 #
-# griff
+# reedd
 #
 # Copyright: (c) 2012 by Szymon Urbaś <urbas@hush.ai>
 #
@@ -31,39 +31,39 @@ MANDIR = /usr/local/man
 CXX = gcc
 CXXFLAGS += -Wall -Werror -std=c99 -I./src
 
-OBJECTS = griff.o installs.o
+OBJECTS = reedd.o installs.o
 
 VERSION := ${shell cat VERSION}
 
-all: griff man
+all: reedd man
 
-griff: $(OBJECTS)
+reedd: $(OBJECTS)
 	$(CXX) $(OBJECTS) -o bin/$@
 
-griff.o: src/griff.c src/griff.h
-	$(CXX) $(CXXFLAGS) -D'VERSION="$(VERSION)"' -c src/griff.c
+reedd.o: src/reedd.c src/reedd.h
+	$(CXX) $(CXXFLAGS) -D'VERSION="$(VERSION)"' -c src/reedd.c
 
 installs.o: src/cmd/installs.c src/cmd.h
 	$(CXX) $(CXXFLAGS) -c src/cmd/installs.c
 
-man: griff.8
+man: reedd.8
 
 %: man/%.in
 	sed -e "s/##version##/$(VERSION)/" $< > man/$@
 
 install: all
-	install -D -m 0755 bin/griff $(BINDIR)/griff
-	install -D -m 0644 man/griff.8 $(MANDIR)/man8/griff.8
+	install -D -m 0755 bin/reedd $(BINDIR)/reedd
+	install -D -m 0644 man/reedd.8 $(MANDIR)/man8/reedd.8
 
 uninstall:
-	rm -f $(BINDIR)/griff
-	rm -f $(MANDIR)/man8/griff.8
+	rm -f $(BINDIR)/reedd
+	rm -f $(MANDIR)/man8/reedd.8
 
 clean:
 	rm -f *~ *.o *.8
 	rm -f src/*~ src/*.o man/*.8
 
 distclean: clean
-	rm -f bin/griff
+	rm -f bin/reedd
 
 # End of file

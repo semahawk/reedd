@@ -1,3 +1,3 @@
-# griff 0.0.1 (not yet released)
+# reedd 0.0.1 (not yet released)
 
 - Birthday!
