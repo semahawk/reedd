@@ -25,17 +25,17 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-BINDIR = /usr/local/bin
-MANDIR = /usr/local/man
+CXX      = gcc
+CXXFLAGS = -Wall -Werror -std=c99 -O2 -I./src
+YACC     = bison
+YFLAGS   = -d
+LEX      = flex
 
-CXX = gcc
-CXXFLAGS += -Wall -Werror -std=c99 -I./src
-
-OBJECTS = reedd.o installs.o
+OBJECTS = reedd.o installs.o config.y.tab.o config.lex.yy.o config.o
 
 VERSION := ${shell cat VERSION}
 
-all: reedd man
+all: reedd man clean
 
 reedd: $(OBJECTS)
 	$(CXX) $(OBJECTS) -o bin/$@
@@ -46,22 +46,33 @@ reedd.o: src/reedd.c src/reedd.h
 installs.o: src/cmd/installs.c src/cmd.h
 	$(CXX) $(CXXFLAGS) -c src/cmd/installs.c
 
+config.y.tab.o: src/config_grammar.y
+	cd src; $(YACC) $(YFLAGS) config_grammar.y
+	$(CXX) $(CXXFLAGS) -c src/config.y.tab.c
+
+config.lex.yy.o: src/config_scanner.l
+	cd src; $(LEX) config_scanner.l
+	$(CXX) $(CXXFLAGS) -D_POSIX_SOURCE -c src/config.lex.yy.c
+
+config.o: src/config.c src/config.h
+	$(CXX) $(CXXFLAGS) -c src/config.c
+
 man: reedd.8
 
 %: man/%.in
 	sed -e "s/##version##/$(VERSION)/" $< > man/$@
 
 install: all
-	install -D -m 0755 bin/reedd $(BINDIR)/reedd
-	install -D -m 0644 man/reedd.8 $(MANDIR)/man8/reedd.8
+	install -D -m 0755 bin/reedd /usr/bin/reedd
+	install -D -m 0644 man/reedd.8 /usr/man/man8/reedd.8
 
 uninstall:
-	rm -f $(BINDIR)/reedd
-	rm -f $(MANDIR)/man8/reedd.8
+	rm -f /usr/bin/reedd
+	rm -f /usr/man/man8/reedd.8
 
 clean:
-	rm -f *~ *.o *.8
-	rm -f src/*~ src/*.o man/*.8
+	rm -f *~ *.o *.8 *.tab.c *.tab.h *.yy.c
+	rm -f src/*~ src/*.o man/*.8 src/*.tab.c src/*.tab.h src/*.yy.c
 
 distclean: clean
 	rm -f bin/reedd
