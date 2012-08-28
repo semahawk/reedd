@@ -30,41 +30,13 @@
 
 #include "reedd.h"
 #include "cmd.h"
-
-void help(const char* progname){
-  printf("Usage: %s [--version] [--help] [--usage]\n", progname);
-  printf("             <command> [args]\n");
-  printf("\n");
-  printf("  A package manager for Red Head.\n");
-  printf("\n");
-  printf("  Commands:\n");
-  printf("  installs                   Install a package");
-  printf("\n\n");
-  printf("  Options:\n");
-  printf("  -h, --help                 Print this help\n");
-  printf("  -u, --usage                Output usage info\n");
-  printf("  -V, --version              Show version\n");
-  printf("\n\n");
-  printf("This program is licensed under the MIT license.\n");
-  printf("If you have any questions/found a bug, write to <urbas@hush.ai>\n");
-}
-
-void usage(const char* progname){
-  printf("Usage: %s [option] [--help] <command> [args]\n", progname);
-}
-
-void version(void){
-  printf("\n");
-  printf("   Reedd v%s\n", VERSION);
-  printf("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
-  printf("\n");
-  printf("   This program is licensed under the MIT license.\n");
-  printf("\n");
-}
+#include "config.h"
 
 int main(int argc, char* argv[]){
   /* original program's name */
   const char* progname = argv[0];
+  /* initialize the config checking and data retrieving and blah blah blah */
+  config_init();
 
   /* show help if not specified any args */
   if (argc < 2){
@@ -127,5 +99,36 @@ int main(int argc, char* argv[]){
     printf("%s: unknown command ‘%s’\n", progname, cmd);
     return 1;
   }
+}
+
+void help(const char* progname){
+  printf("Usage: %s [--version] [--help] [--usage]\n", progname);
+  printf("             <command> [args]\n");
+  printf("\n");
+  printf("  A package manager for Red Head.\n");
+  printf("\n");
+  printf("  Commands:\n");
+  printf("  installs                   Install a package (doesn't work, of course)");
+  printf("\n\n");
+  printf("  Options:\n");
+  printf("  -h, --help                 Print this help\n");
+  printf("  -u, --usage                Output usage info\n");
+  printf("  -V, --version              Show version\n");
+  printf("\n\n");
+  printf("This program is licensed under the MIT license.\n");
+  printf("If you have any questions/found a bug, write to <urbas@hush.ai>\n");
+}
+
+void usage(const char* progname){
+  printf("usage: %s [option] [--help] <command> [args]\n", progname);
+}
+
+void version(void){
+  printf("\n");
+  printf("   Reedd v%s\n", VERSION);
+  printf("   Copyright (c) 2012 by Szymon Urbaś <urbas@hush.ai>\n");
+  printf("\n");
+  printf("   This program is licensed under the MIT license.\n");
+  printf("\n");
 }
 

@@ -1,0 +1,28 @@
+/*
+ * etc/reedd.conf.example
+ *
+ * example configuration file for Reedd
+ *
+ *
+ * Syntax:
+ *
+ *   key   value
+ *
+ * Statement terminators:
+ *
+ *   o  new line char '\n'
+ *   o  semicolon     ';'
+ *
+ * Data types:
+ *
+ *   o  string  (eg. "foo", 'bar')
+ *      note: there is no difference between "foo" and 'foo'
+ *
+ *   o  int     (eg. 1, 15, 987)
+ *   o  float   (eg. 3.14, 1.024)
+ *
+ */
+
+CFLAGS      "-march=k8 -W -Wall"
+MAKEFLAGS   "-j3"
+
